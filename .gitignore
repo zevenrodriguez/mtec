@@ -43,6 +43,6 @@ Temporary Items
 .apdisk
 
 #admin files
-mtec1005/admin/
-mtec2250/admin/
-mtec2280/admin/
+mtec1005/admin/*
+mtec2250/admin/*
+mtec2280/admin/*
