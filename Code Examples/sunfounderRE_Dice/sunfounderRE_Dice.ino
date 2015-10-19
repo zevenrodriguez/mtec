@@ -1,17 +1,16 @@
 const int clkPin= 2;
 const int dtPin= 3;
+
+//button variables
 const int swPin= 4 ;//the number of the button
 int toggleState = 0;
+boolean pressing = false;
 
- 
 int encoderVal = 0;
 
 int maxNumber = 6;
-int minNumber = 0;
-
+int minNumber = 1;
 int roll = 0;
-boolean pressing = false;
-
 int pastValue = 0;
  
 void setup()
@@ -31,14 +30,16 @@ void loop()
   int change = getEncoderTurn();// Runs this function every loop
   encoderVal = encoderVal + change;
 
-  if(encoderVal > 6){
-    encoderVal = 6;
+  if(encoderVal > maxNumber){
+    encoderVal = maxNumber;
   }
 
   
-  if(encoderVal < 0){
-    encoderVal = 0;
+  if(encoderVal < minNumber){
+    encoderVal = minNumber;
   }
+  
+  // Print when change happens
 
   if (encoderVal != pastValue){
     Serial.println(encoderVal);
@@ -47,11 +48,11 @@ void loop()
 
   toggleState = digitalRead(swPin);
 
-  if (toggleState == HIGH) {
+  if (toggleState == LOW) {
     pressing = true;
   }
 
-  if (toggleState == LOW && pressing == true) {
+  if (toggleState == HIGH && pressing == true) {
     pressing = false;
     
     // Your action goes here

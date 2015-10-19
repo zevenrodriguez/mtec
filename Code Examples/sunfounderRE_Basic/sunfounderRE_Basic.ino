@@ -9,7 +9,7 @@ void setup()
   pinMode(clkPin, INPUT);//set clkPin as INPUT
   pinMode(dtPin, INPUT);
   pinMode(swPin, INPUT);
-  digitalWrite(swPin, HIGH);
+  digitalWrite(swPin, HIGH); //using a pullup resistor
   Serial.begin(9600);
 }
  
@@ -24,11 +24,15 @@ void loop()
   Serial.println(encoderVal);
 }
  
-int getEncoderTurn(void)
+int getEncoderTurn()//This function will return an integer value
 {
+  //resetting everytime function runs
   static int oldA = HIGH;
   static int oldB = HIGH;
   int result = 0;
+  
+  //read encoder
+  
   int newA = digitalRead(clkPin);//read the value of clkPin to newA
   int newB = digitalRead(dtPin);//read the value of dtPin to newB
 
@@ -42,7 +46,6 @@ int getEncoderTurn(void)
   Serial.println(newA);
   Serial.print("newB: ");
   Serial.println(newB);
-
  */
   
   if (newA != oldA || newB != oldB)
