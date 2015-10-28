@@ -16,16 +16,22 @@
 */
 // include the library code:
 #include <LiquidCrystal.h>
-
+char message[] = {"The Gunfight at the O.K. Corral was a 30-second gunfight between outlaw Cowboys and lawmen that is generally regarded as the most famous shootout in the history of the American Wild West. "};
+int messageSize = 0;
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(4, 6, 10, 11, 12, 13);
+char top[16]={};
+char bottom[16]={};
 
 void setup() {
   // set up the LCD's number of columns and rows:
+  Serial.begin(9600);
   lcd.begin(16, 2);
   // Print a message to the LCD.
   lcd.print("hello, world!");
   lcd.clear();
+  messageSize = strlen(message);
+  Serial.println(messageSize);
 }
 
 void loop() {
