@@ -87,14 +87,11 @@ void readFile(String _readFile) {
   myFile = SD.open(_readFile);
   if (myFile) {
     Serial.println(_readFile);
-
     // read from the file until there's nothing else in it:
     while (myFile.available()) {
       //Serial.write(myFile.read());
       char c = myFile.read();
-      
       Serial.print(c);
-      
       if(c == '\n'){
         lineCounter++;
         messageDone = true;
