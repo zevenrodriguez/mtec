@@ -26,7 +26,7 @@ void setup() {
   Serial.begin(9600);
   // reserve 200 bytes for the inputString:
   inputString.reserve(200);
-  pinMode(led, OUTPUT);
+  pinMode(tonePin, OUTPUT);
 
 }
 
