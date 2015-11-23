@@ -19,7 +19,7 @@
 
 String inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
-const int led = 13;
+const int tonePin = 2;
 int toneNumber = -1;
 void setup() {
   // initialize serial:
@@ -42,7 +42,7 @@ void loop() {
   }
 
   if (toneNumber > -1) {
-    tone(2, toneNumber, 500);
+    tone(tonePin, toneNumber, 500);
     toneNumber = -1;
   }
 
