@@ -1,3 +1,6 @@
 [submodule "wiki"]
 	path = wiki
 	url = https://github.com/zevenwolf/mtec.wiki.git
+[submodule "mtec.wiki"]
+	path = mtec.wiki
+	url = https://github.com/zevenwolf/mtec.wiki.git
