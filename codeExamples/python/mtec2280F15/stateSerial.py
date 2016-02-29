@@ -8,6 +8,9 @@ while(True):
         if(command == "left"):
             print("you are going left")
             state = 1
+            message = "state1" + "\n"
+            message = message.encode()
+            ser.write(message)
         elif(command == "right"):
             print("you are going right")
             state = 2
