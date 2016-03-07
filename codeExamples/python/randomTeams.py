@@ -1,7 +1,9 @@
 import random
 
-teamA = ["Davina", "Armin", "Charlie", "Sean", "Shane", "Saranjit", "Robin", "Woodrow"]
-teamX = ["James", "Ryan", "Kenny", "Ziaul", "Miles", "Jennifer", "Tamanda"]
+teamA = ["Davina", "Armin", "Charlie", "Sean", "Shane",  "Robin", "Woodrow"]
+teamX = ["James", "Kenny", "Ziaul", "Miles", "Jennifer", "Tamanda"]
+
+#, "Ryan" "Saranjit",
 
 teamASize = len(teamA)
 teamXSize = len(teamX)
