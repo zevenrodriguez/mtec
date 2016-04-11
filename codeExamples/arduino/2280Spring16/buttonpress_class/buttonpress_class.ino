@@ -1,6 +1,9 @@
 int ledPin = 13;
 int switchPin = 2;
 int switchRead = 0;
+int counter = 0;
+
+boolean pressing = false;
 void setup() {
   // put your setup code here, to run once:
   pinMode(ledPin, OUTPUT);
@@ -12,9 +15,24 @@ void loop() {
   // put your main code here, to run repeatedly:
   //digitalWrite(ledPin, HIGH);
   switchRead = digitalRead(switchPin);
-  Serial.println(switchRead);
+  //Serial.println(switchRead);
 
-  delay(2000);
+  if(switchRead == 1){
+    pressing = true;
+    //counter++;
+    //overloading int
+    //counter=counter+100;
+    //Serial.println(counter);
+
+  }
+
+  if(switchRead == 0 && pressing == true){
+    pressing = false;
+    //do something
+    //counter = counter + 1;
+    counter++;
+    Serial.println(counter);
+  }
 //  if (switchRead == 1) {
 //    digitalWrite(ledPin, HIGH);
 //  }
@@ -22,10 +40,13 @@ void loop() {
 //  if (switchRead == 0) {
 //      digitalWrite(ledPin, LOW);
 //    }
-
-  if (switchRead == 1) {
+  if(counter > 1){
+    counter = 0;
+  }
+  if (counter == 1) {
     digitalWrite(ledPin, HIGH);
-  }else {
+  }
+  if(counter == 0){
       digitalWrite(ledPin, LOW);
     }
 
