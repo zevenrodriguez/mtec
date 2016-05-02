@@ -11,13 +11,13 @@ while(True):
         if(command == "left"):
             print("you are going left")
             state = 1
-            message = "state1" + "\n"
+            message = "1" + "\n"
             message = message.encode()
             ser.write(message)
         elif(command == "right"):
             print("you are going right")
             state = 2
-            message = "state2" + "\n"
+            message = "2" + "\n"
             message = message.encode()
             ser.write(message)
         else:
@@ -29,25 +29,25 @@ while(True):
         if(command == "left"):
             print("you are going left")
             state = 0
-            message = "state0" + "\n"
+            message = "0" + "\n"
             message = message.encode()
             ser.write(message)
         elif(command == "right"):
             print("you are going right")
             state = 2
-            message = "state2" + "\n"
+            message = "2" + "\n"
             message = message.encode()
             ser.write(message)
         else:
             print("Wrong input")
             state = 1
-            message = "state1" + "\n"
+            message = "1" + "\n"
             message = message.encode()
             ser.write(message)
 
     if(state == 2):
         print("You have reached your goal")
-        message = "state2" + "\n"
+        message = "2" + "\n"
         message = message.encode()
         ser.write(message)
         break

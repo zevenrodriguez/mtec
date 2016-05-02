@@ -1,5 +1,5 @@
 import serial
-ser = serial.Serial("COM3",9600)
+ser = serial.Serial("COM4",9600)
 print(ser.name)
 
 while(True):
